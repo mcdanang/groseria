@@ -1,5 +1,6 @@
 const path = require("path");
 require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
+const mysql2 = require("mysql2");
 
 module.exports = {
 	development: {
@@ -8,6 +9,7 @@ module.exports = {
 		database: process.env.DB_SCHEMA,
 		host: process.env.DB_HOST,
 		dialect: "mysql",
+		dialectModule: "mysql2",
 	},
 	test: {
 		username: "root",
